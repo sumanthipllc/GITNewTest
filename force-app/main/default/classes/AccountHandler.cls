@@ -16,7 +16,7 @@ implements ITrigger
 	*/
     public void bulkBefore()
     {
-        // This is the method which fetches the related records and all the ones to be processed in the trigger.
+        // test This is the method which fetches the related records and all the ones to be processed in the trigger.
     }
     
     public void bulkAfter()
