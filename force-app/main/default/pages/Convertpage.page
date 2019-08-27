@@ -1,0 +1,64 @@
+<apex:page standardController="Leads__c" extensions="Convertpage_AC">
+  <apex:form id="theform">
+  <apex:pageBlock mode="edit">
+  <apex:messages title="Errors Occured" styleClass="errorMsg" style="font-family:verdana,garamond,serif;" />
+  <center>
+  <apex:commandButton styleClass="btn" value="Convert" reRender="theform" >
+      
+      <apex:actionSupport event="onclick" action="{!convert}" reRender="theform">
+      
+          <apex:param value="{!Leads__c.id}" assignTo="{!leadid}" />
+      
+      </apex:actionSupport>
+  
+  </apex:commandButton>
+  <apex:commandButton styleClass="btn" value="Cancel" action="{!Cancel}" reRender="theform"/>
+  </center>
+  <apex:param id="test" value="{!Leads__c.id}" assignTo="{!leadid}" />
+  <apex:param id="test1" value="{!Leads__c.name}" assignto="{!leadname1}"/>
+  <apex:outputText > {!Leads__c.id}</apex:outputText>
+  <apex:pageBlockSection collapsible="false" columns="2" title="Convert Lead">
+      <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Record Owner"/>
+          <apex:outputlabel >{!Leads__c.Owner.name}</apex:outputlabel>
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+      <apex:outputLabel value="Account Name"/>
+      <apex:outputPanel styleClass="requiredInput" layout="block" style="position:relative;left:2px">
+             <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+          
+          <apex:InputText value="{!Leadname1}" />
+          </apex:outputpanel>
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+      <apex:outputLabel value="Opportunity Name"/>
+      <apex:outputPanel styleClass="requiredInput" layout="block" style="position:relative;left:2px">
+             <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+          
+          <apex:Inputtext value="{!Oppname}"/>
+          </apex:outputpanel>
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+      
+          <apex:outputLabel value="Converted Status"/>
+      
+          <apex:outputPanel styleClass="requiredInput" layout="block" style="position:relative;left:2px">
+             <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+             <apex:selectList multiselect="false" size="1" id="convertedstatus" value="{!convertedstatus}">
+             <apex:selectOption itemLabel="Closed - Converted" itemValue="Closed - Converted"></apex:selectOption>
+             </apex:selectList>
+          </apex:outputpanel>
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Comments"/>
+          <apex:inputTextarea style="height:20px;width:300px" value="{!Leads__c.Description__c}"/>
+      
+      </apex:pageBlockSectionItem>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

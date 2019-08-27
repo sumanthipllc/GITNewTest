@@ -1,0 +1,3 @@
+.localheader {
+COLOR: #ffffff; FONT-FAMILY: geneva, arial, helvetica, lucida-sans, sans-serif; FONT-SIZE: 15px; TEXT-DECORATION: none ; background-color: Green
+}

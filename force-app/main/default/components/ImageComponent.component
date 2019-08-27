@@ -1,0 +1,6 @@
+<apex:component >
+    <div>
+        <img id="img1" src="https://s3.amazonaws.com/howard-sandbox/test/designs/standard/coastal/anchor/flat.png" />
+        
+    </div>
+</apex:component>

@@ -1,0 +1,60 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="CustomSearchApx"  >
+    
+    <aura:attribute name="listOfArts" type="Account[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="slds-form-element">
+        
+        <div class="slds-form-element__control">
+            <label class="slds-form-element__label slds-input slds-size_1-of-8" for="text-input-id-1">Input Label</label>
+            <!--<lightning:input label="" aura:id="text1" class="slds-input slds-size_1-of-4" placeholder="Placeholder Text" />-->
+            <ui:inputText value="My Expense" aura:id="text1" class="slds-input slds-size_1-of-4" keyup="{!c.getInput}" updateOn="keyup"/>
+        </div>
+        <lightning:button class="slds-button_neutral" aura:id="Artview" label="Click" onclick="{!c.getInput}" />
+    </div>
+    <div>
+        <table class="slds-table slds-table_bordered slds-table_col-bordered">  
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Id">Account ID</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    
+                    <th scope="col">
+                        <div class="slds-truncate" title="Contact">Phone</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.listOfArts}" var="art" >
+                    
+                    
+                    <tr>
+                        
+                        <td data-label="AccId">
+                            <div class="slds-truncate" title="{!art.Id}">{!art.Id}</div>
+                        </td>
+                        <td data-label="Name">
+                            <div class="slds-truncate" title="{!art.Name}">{!art.Name}</div>
+                        </td>
+                        <td data-label="Phone">
+                            <div class="slds-truncate" title="{!art.Phone}">{!art.Phone}</div>
+                        </td>
+                        <td data-label="Email">
+                            <div class="slds-truncate" title="{!art.Email}">{!art.Email}</div>
+                        </td>
+                    </tr>
+                    
+                    
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    
+</aura:component>

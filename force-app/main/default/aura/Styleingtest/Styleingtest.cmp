@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+<article class="slds-card">
+<div class="slds-card__header slds-grid ">
+
+
+<button class="slds-button slds-button_neutral ">New</button>
+
+</div>
+<div class="slds-card__body slds-card__body_inner slds-align_absolute-center"><img src="{!'https://s3.amazonaws.com/yeti-custom-shop/designs/premium/collegiate/alabama-primary-2/flat.png'}" /></div>
+
+</article>
+    
+</aura:component>

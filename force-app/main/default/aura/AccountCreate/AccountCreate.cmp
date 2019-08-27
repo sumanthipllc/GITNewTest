@@ -1,0 +1,62 @@
+<aura:component controller="AccountPickListController" implements="flexipage:availableForRecordHome,force:hasRecordId">
+
+    <aura:attribute name="newAcc" type="Object"/>
+    <aura:attribute name="simpleNewAcc" type="Object"/>
+    <aura:attribute name="newAccError" type="String"/>
+    <aura:attribute name="accId" type="String" default="empty"/>
+
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <force:recordData aura:id="accRecordCreator" 
+                      layoutType="FULL"
+                      targetRecord="{!v.newAcc}"
+                      targetFields="{!v.simpleNewAcc}"
+                      targetError="{!v.newAccError}" /> 
+                      
+    <div class="slds-page-header" role="banner">
+        <p class="slds-text-heading_label">Create Contact</p>
+    </div>
+
+    <!-- Display Lightning Data Service errors -->
+    <aura:if isTrue="{!not(empty(v.newAccError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.newContactError}
+            </ui:message>
+        </div>
+    </aura:if>
+{!v.simpleNewAcc.RecordType}
+    <!-- Display the new contact form -->
+    <div class="slds-grid full forcePageBlockSectionRow">
+        <lightning:input aura:id="contactField" name="firstName" label="Account Name"
+                         value="{!v.simpleNewAcc.Name}" required="true"/>
+      
+        
+        <lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" />
+        test
+        <lightning:inputField fieldName="CustomerPriority__c" value="{!v.simpleNewAcc.CustomerPriority__c}" />
+                      
+ <!--       <lightning:button label="Save contact" onclick="{!c.handleSaveContact}"
+                   variant="brand" class="slds-m-top_medium"/> 
+        test1
+        <lightning:picklistPath aura:id="picklistPath" recordId="{!v.recordId}"
+        variant="non-linear"
+        picklistFieldApiName="CustomerPriority__c"
+        >
+    	</lightning:picklistPath>-->
+        
+        <div class="slds-form-element">
+        <label class="slds-form-element__label" for="select-01">Select Industry</label>
+        <div class="slds-select_container">
+            <ui:inputSelect label="Cus Priority" class="dynamic" aura:id="InputAccountIndustry"/> 
+        </div>
+            <lightning:button label="Save contact" onclick="{!c.handleSaveContact}"
+                   variant="brand" class="slds-m-top_medium"/> 
+    </div>
+        
+        {!v.accId}
+   </div>
+
+</aura:component>

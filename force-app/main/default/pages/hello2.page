@@ -1,0 +1,30 @@
+<apex:page sidebar="true" showHeader="true">
+<apex:form >     
+      <b> {! $USER.FirstName} {! $user.LastName}</b>
+  <apex:pageBlock title="my First pageblock" mode="edit" helpTitle="info" helpUrl="https://na16.salesforce.com/apexpages/apexcomponents.apexp#" >
+   <a  href="www.google.com" >Save</a>
+      <p> {! IF( CONTAINS('salesforce.com','force.com')," this is present","this is not present") } </p>
+  <apex:pageBlockButtons >
+          <apex:commandButton action="{! save}" value="save"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection title=" Its my first page block section "  collapsible="true" >
+      <h3 style="color:red"> I'm in pageblock section item under page block which is under page i.e, 3 sections deeper </h3>
+       </apex:pageBlockSection>
+       
+       <apex:pageBlockSection title=" Its my second page block section " collapsible="true">
+       I'm in pageblock section item under page block which is under page i.e, 3 sections deeper 1</apex:pageBlockSection>
+  </apex:pageBlock>
+  
+  <apex:pageBlock title="my second pageblock" mode="edit">
+  
+      <apex:pageBlockSection title=" Its my first page block section in pageblock 2 " collapsible="true">
+       I'm in pageblock section item under page block which is under page i.e, 3 sections deeper</apex:pageBlockSection>
+       
+       <apex:pageBlockSection title=" Its my second page block section in pageblock2 " collapsible="true">
+       I'm in pageblock section item under page block which is under page i.e, 3 sections deeper 1</apex:pageBlockSection>
+  </apex:pageBlock>
+
+  Congratulations sumanth hello2 
+  This is your new Page: hello 2
+</apex:form>
+</apex:page>

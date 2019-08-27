@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId">
+
+    <aura:attribute name="record" type="Object"/>
+    
+
+    <force:recordData aura:id="recordLoader"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      targetRecord="{!v.record}"
+      targetFields="{!v.simpleRecord}"
+      
+      />
+
+    
+<div class="slds-page-header">
+  <div class="slds-media">
+        <div class="slds-media__body">
+      <h1 class="slds-page-header__title slds-truncate slds-align-middle" >{!v.simpleRecord.ArtName__c}</h1>
+      <p class="slds-text-body_small slds-line-height_reset">{!v.simpleRecord.YETIKey__c}</p>
+    </div>
+  </div>
+</div>
+    
+    <div style="padding: 1rem;" class="slds-box"> 
+        
+    1
+    <div class="slds-align_absolute-center">
+    	<img src="{!'https://s3.amazonaws.com/howard-sandbox/test/designs'+v.simpleRecord.WebKey__c+'/flat.png'}" onerror="{!c.errorImage}"/>
+
+    </div>
+        
+    </div>    
+    <!-- Display Lightning Data Service errors, if any -->
+    
+</aura:component>

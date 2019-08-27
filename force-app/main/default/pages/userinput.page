@@ -1,0 +1,53 @@
+<apex:page controller="userinput_AC">
+  
+  <apex:form id="theform">
+      <apex:pageBlock title="User Lookup" mode="edit">
+      
+          <apex:pageBlockSection collapsible="false" columns="2">
+          
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Select User"/>
+                  <apex:inputtext value="{!sname}"/>
+
+              
+              </apex:pageBlockSectionItem>
+                          <apex:commandButton value="enter" action="{!selectaccs}" reRender="panelid"/>
+
+           
+          
+          
+          </apex:pageBlockSection>
+          
+          <apex:outputPanel id="panelid" >
+          <apex:pageBlockSection title="list of related Accounts" collapsible="false" columns="1" rendered="{!isTrue}" >
+          
+              <apex:pageBlockTable value="{!wrapperlist}" var="a">
+              
+              
+              <apex:column headerValue="Account Id">
+                <!--  <apex:outputLink value="/{!a.ID}" target="blank">{!a.id}</apex:outputLink> -->
+                <apex:commandLink value="{!a.aId}" action="{!detailpage1}">
+                    <apex:param name="Accid" value="{!a.aID}" assignTo="{!Accountid}"/> 
+                
+                </apex:commandlink>
+              </apex:column>
+              
+              <apex:column value="{!a.aname}" headerValue="Account Name"/>
+              <apex:column value="{!a.cname}" headerValue="Contact Name"/>
+              <apex:column value="{!a.cid}" headerValue="Contact Id"/>
+              
+
+              
+              </apex:pageBlockTable>
+          
+          
+          
+          </apex:pageBlockSection>
+          </apex:outputPanel>
+      
+      
+      </apex:pageBlock>
+  
+  </apex:form>
+  
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page standardcontroller="Account">
+     <apex:detail />
+     
+     <apex:pageBlock title="output function ">
+         <apex:pageBlockSection title="p INF">
+         
+        
+         <apex:outputField value="{!account.Name}"/> 
+         <br></br>
+         <apex:outputField value="{!account.Owner.Name}"/>
+         
+             <apex:pageBlockTable value="{!account.contacts}" var="item"> 
+                 <apex:column value="{!item.Name}"/>
+             </apex:pageBlockTable>
+         </apex:pageBlockSection>
+     </apex:pageBlock>
+</apex:page>

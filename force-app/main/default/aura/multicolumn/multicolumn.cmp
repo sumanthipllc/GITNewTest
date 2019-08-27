@@ -1,0 +1,226 @@
+<aura:component implements="lightning:actionOverride,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+   <!-- 
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="6">
+            AAA
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="6" >
+            BBB
+        </lightning:layoutItem>
+    </lightning:layout  >
+        <lightning:layout multipleRows="true">
+        <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="6">
+            ccc
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="6" >
+            DDD
+        </lightning:layoutItem>
+    </lightning:layout>
+
+
+<div class="slds-grid slds-wrap">
+    <span class="slds-size_1-of-2 slds-max-small-size_1-of-1"><lightning:input aura:id="contactField" name="firstName" label="Account Name"
+                         value="{!v.simpleNewAcc.Name}" required="true"/></span>
+    <span class="slds-size_1-of-2 slds-max-small-size_1-of-1"><lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" /></span>
+    <span class="slds-size_1-of-2 slds-max-small-size_1-of-1">CCC</span>
+    <span class="slds-size_1-of-2 slds-max-small-size_1-of-1">DDD</span>
+</div>
+    
+    -->
+    
+    
+    
+ <!--   
+<div class="slds-grid slds-gutters slds-grid_vertical-align-center">
+    <div class="slds-col">
+    <span></span>
+  </div>
+  
+<div class="slds-col">
+    <span>Account Name1</span>
+<lightning:input aura:id="contactField" name="firstName" label="Account Name"
+                         value="{!v.simpleNewAcc.Name}" required="true"/>
+</div>
+<div class="slds-col">
+      <span>Phone1</span>
+<lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" />
+</div>
+<div class="slds-col">
+<span></span>
+</div>
+
+</div>-->
+    
+    	<article class="slds-card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+ 
+<div class="slds-media__body ">
+<h2 class="slds-text-align_center">
+test
+<span class="slds-text-heading_large ">New Account : {!v.simpleNewAcc.RecordType}</span>
+
+</h2>
+</div>
+</header>
+
+</div>
+<div class="slds-card__body slds-card__body_inner">
+
+
+<div class="slds-section slds-is-open">
+  <h3 class="slds-section__title slds-theme--shade primaryPaletteBorder test-id__section-header-container">
+    <span class="test-id__section-header-title section-header-title slds-p-horizontal--small slds-truncate" title="Section Title" >Section Title</span>
+  </h3>
+<form class="slds-form--stacked">
+                <div class="slds">
+    <div class="slds-grid slds-wrap slds-grid_align-center slds-grid_align-space ">
+     <div class="slds-col--padded slds-size--1-of-4 slds-medium-size--1-of-4">
+
+      <div class="slds-form-element slds-is-required">
+       <div class="slds-form-element__control">
+        <lightning:input aura:id="contactField" name="firstName" label="Account Name--1"
+                         value="{!v.simpleNewAcc.Name}" required="true"/>
+       </div>
+                        </div>
+                         
+                        <div class="slds-form-element">
+                          <div class="slds-form-element__control">
+                              <lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" />
+                          </div>
+                      </div>
+      
+      
+     </div>
+	 
+     <div class="slds-col--padded slds-size--1-of-4 slds-medium-size--1-of-4">
+      <div class="slds-form-element slds-is-required">
+       <div class="slds-form-element__control">
+        <lightning:input aura:id="contactField" name="firstName" label="Account Name"
+                         value="{!v.simpleNewAcc.Name}" required="true"/>
+       </div>
+                        </div>
+                         
+                        <div class="slds-form-element">
+                          <div class="slds-form-element__control">
+                              <lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" />
+                          </div>
+                      </div>
+     </div>
+    </div>
+   </div>  
+   
+            </form>
+    
+</div>
+    section 2
+    <div class="slds-section slds-is-open">
+  <h3 class="slds-section__title slds-theme--shade primaryPaletteBorder test-id__section-header-container">
+    <span class="test-id__section-header-title section-header-title slds-p-horizontal--small slds-truncate" title="Section Title" >Section Title</span>
+  </h3>
+<form class="slds-form--stacked">
+                <div class="slds">
+    <div class="slds-grid slds-wrap slds-grid_align-center slds-grid_align-space ">
+     <div class="slds-col--padded slds-size--1-of-4 slds-medium-size--1-of-4">
+
+      <div class="slds-form-element slds-is-required">
+       <div class="slds-form-element__control">
+        <lightning:input aura:id="contactField" name="firstName" label="Account Name"
+                         value="{!v.simpleNewAcc.Name}" required="true"/>
+       </div>
+                        </div>
+                         
+                        <div class="slds-form-element">
+                          <div class="slds-form-element__control">
+                              <lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" />
+                          </div>
+                      </div>
+      
+      
+     </div>
+	 
+     <div class="slds-col--padded slds-size--1-of-4 slds-medium-size--1-of-4">
+      <div class="slds-form-element slds-is-required">
+       <div class="slds-form-element__control">
+        <lightning:input aura:id="contactField" name="firstName" label="Account Name"
+                         value="{!v.simpleNewAcc.Name}" required="true"/>
+       </div>
+                        </div>
+                         
+                        <div class="slds-form-element">
+                          <div class="slds-form-element__control">
+                              <lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" />
+                          </div>
+                      </div>
+     </div>
+    </div>
+   </div>  
+   
+            </form>
+    
+</div>
+    
+    section 3
+    
+     <div class="slds-section slds-is-open">
+  <h3 class="slds-section__title slds-theme--shade primaryPaletteBorder test-id__section-header-container">
+    <span class="test-id__section-header-title section-header-title slds-p-horizontal--small slds-truncate" title="Section Title" >Section Title</span>
+  </h3>
+<form class="slds-form--stacked">
+                <div class="slds">
+    <div class="slds-grid slds-wrap slds-grid_align-center slds-grid_align-space ">
+     <div class="slds-col--padded slds-size--1-of-4 slds-medium-size--1-of-4">
+
+      <div class="slds-form-element slds-is-required">
+       <div class="slds-form-element__control">
+        <lightning:input aura:id="contactField" name="firstName" label="Account Name"
+                         value="{!v.simpleNewAcc.Name}" required="true"/>
+       </div>
+                        </div>
+                         
+                        <div class="slds-form-element">
+                          <div class="slds-form-element__control">
+                              <lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" />
+                          </div>
+                      </div>
+      
+      
+     </div>
+	 
+     <div class="slds-col--padded slds-size--1-of-4 slds-medium-size--1-of-4">
+      <div class="slds-form-element slds-is-required">
+       <div class="slds-form-element__control">
+        <lightning:input aura:id="contactField" name="firstName" label="Account Name"
+                         value="{!v.simpleNewAcc.Name}" required="true"/>
+       </div>
+                        </div>
+                         
+                        <div class="slds-form-element">
+                          <div class="slds-form-element__control">
+                              <lightning:input aura:id="contactField" name="title" label="Phone"
+                      value="{!v.simpleNewAcc.Phone}" />
+                          </div>
+                      </div>
+     </div>
+    </div>
+   </div>  
+   
+            </form>
+    
+</div>
+    
+    
+
+</div>
+<footer class="slds-card__footer">Card Footer</footer>
+</article>		
+
+</aura:component>

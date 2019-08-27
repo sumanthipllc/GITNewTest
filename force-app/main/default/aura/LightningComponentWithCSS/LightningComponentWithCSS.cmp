@@ -1,0 +1,9 @@
+<aura:component >
+	<h1>Hello World</h1>
+    <h2>Including CSS</h2>
+    <ltng:require styles="/resource/SampleBootStrap" />
+    <ltng:require styles="/resource/TestCSS" />
+    <div class="localheader">
+      test test
+    </div>
+</aura:component>
